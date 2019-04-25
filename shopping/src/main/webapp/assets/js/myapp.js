@@ -12,6 +12,9 @@ $(function() {
 	case 'All Products':
 		$('#listProducts').addClass('active');
 		break;
+	case 'Manage Products':
+		$('#manageProducts').addClass('active');
+		break;
 
 	default:
 		if (menu == "Home")
@@ -94,15 +97,14 @@ $(function() {
 											+ '/show/'
 											+ data
 											+ '/product" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span></a> &#160;';
-									if (row.quantity <1) {
+									if (row.quantity < 1) {
 										str += '<a href="javascript:void(0)" class="btn btn-success disabled"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
-									}
-									else{
+									} else {
 										str += '<a href="'
-											+ window.contextRoot
-											+ '/cart/add/'
-											+ data
-											+ '/product" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
+												+ window.contextRoot
+												+ '/cart/add/'
+												+ data
+												+ '/product" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
 									}
 									console.log(str);
 									return str
@@ -111,3 +113,11 @@ $(function() {
 				});
 	}
 });
+
+// dismiss alert after 3 sec
+var alert = $('.alert');
+if (alert.length) {
+	setTimeout(function(){
+		$alert.fadeOut('slow');
+	},3000)
+}

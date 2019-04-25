@@ -20,6 +20,7 @@ public class ProductServiceImpl implements ProductService {
 	private ProductDAO productDAO;
 
 	@Override
+	@Transactional
 	public boolean add(Product product) {
 		return productDAO.add(product);
 	}

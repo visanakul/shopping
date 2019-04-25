@@ -69,6 +69,12 @@
 				test="${userClickAllProducts==true or userClickCategoryProducts==true }">
 				<%@ include file="listProducts.jsp"%>
 			</c:if>
+			
+			<!-- Manage Page Content if clicks Manage Products-->
+			<c:if
+				test="${userClickManageProducts==true}">
+				<%@ include file="manageProducts.jsp"%>
+			</c:if>
 		</div>
 
 	</div>
